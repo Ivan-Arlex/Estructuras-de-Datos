@@ -4,7 +4,7 @@ using namespace std;
 
 struct nodo{
 
-  int doc=0;
+  char doc[20];
   char nombre[35];
   struct nodo *sig;
 
@@ -15,10 +15,10 @@ struct nodo{
  void registrar(){
 
  aux = (struct nodo *) malloc (sizeof(struct nodo));
- cout<<"INGRESE NOMBRE DE PACIENTE: ";
+ cout<<"INGRESE NOMBRE DEL PACIENTE: ";
  cin>>aux->nombre;
  cout<<" "<<endl;
- cout<<"INGRESE DOCUMETO DE PACIENTE: ";
+ cout<<"INGRESE EL DOCUMENTO DEL PACIENTE: ";
  cin>>aux->doc;
 
 
@@ -48,9 +48,10 @@ struct nodo{
  }
 
 void mostrar(){
- 
+ int i=0;
     for(aux=cab; aux!=NULL; aux=aux->sig){
-    cout<<"NOMBRE DE PACIENTE:  "<<aux->nombre<<" DOCUMENTO : "<<aux->doc<<endl;
+        i++;
+    cout<<i<<". PACIENTE:  "<<aux->nombre<<" DOCUMENTO : "<<aux->doc<<endl;
     }
 }
     
@@ -76,7 +77,7 @@ do{
 
         case 1:
             registrar();
-            cout<<"EL PACIENTE FUE RISTRADO CORRECTAMENTE"<<endl;
+            cout<<"EL PACIENTE FUE REGISTRADO CORRECTAMENTE"<<endl;
             break;
         case 2:
             mostrar();
@@ -85,7 +86,7 @@ do{
             cout<<"GRACIAS POR SU VISITA"<<endl;
             break;
         default:
-            cout<<"EL VALOR INGRESANDO NO ES VALIDO"<<endl;
+            cout<<"EL VALOR INGRESADO NO ES VALIDO"<<endl;
             break;
     }
 }while(opc!=3);
