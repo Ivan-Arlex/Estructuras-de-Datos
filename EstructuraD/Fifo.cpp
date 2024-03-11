@@ -18,7 +18,7 @@ struct nodo{
  cout<<"INGRESE NOMBRE DE PACIENTE: ";
  cin>>aux->nombre;
  cout<<" "<<endl;
- cout<<"INGRESE DOCMUNETO DE PACIENTE: ";
+ cout<<"INGRESE DOCUMETO DE PACIENTE: ";
  cin>>aux->doc;
 
 
@@ -49,9 +49,9 @@ struct nodo{
 
 void mostrar(){
  
-    for(aux=cab; aux!=NULL; aux=aux->sig)
-    cout<<"NOMBRE DE PACIENTE: "<<aux->nombre<<" docmuento : "<<aux->doc<<endl;
-
+    for(aux=cab; aux!=NULL; aux=aux->sig){
+    cout<<"NOMBRE DE PACIENTE:  "<<aux->nombre<<" DOCUMENTO : "<<aux->doc<<endl;
+    }
 }
     
 
