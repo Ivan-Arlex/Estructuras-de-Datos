@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/USUARIO/Documents/EstructurasDatos/EstructuraD",
-      "program": "c:/Users/USUARIO/Documents/EstructurasDatos/EstructuraD/build/Debug/outDebug",
+      "cwd": "c:/Users/USUARIO/Documents/EstructurasDatos/BorradoresD",
+      "program": "c:/Users/USUARIO/Documents/EstructurasDatos/BorradoresD/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
