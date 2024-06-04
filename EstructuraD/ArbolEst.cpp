@@ -273,6 +273,9 @@ void ubicar(nodo *arbol, int elimE){
    }
 }
 void ubicarPadre(nodo *padre){
+    //buscar la direccion del padre
+    //guarda la direccion en elimAux
+
     if((padre->izq!=NULL)&&(padre->izq!=elim)){
     ubicarPadre(padre->izq);
     }
@@ -282,11 +285,12 @@ void ubicarPadre(nodo *padre){
     if((padre->der!=NULL)&&(padre->der!=elim)){
     ubicarPadre(padre->der);
     }
-   if(padre->der==elim){
+    if(padre->der==elim){
         elimAux=padre;
     }
 }
 void casoUno(nodo *arbol){
+    //Caso uno: el nodo a eliminar no tiene hijos;
    if(elim!=arbol){
     ubicarPadre(arbol);
     if(elimAux->izq==elim){
@@ -299,6 +303,7 @@ void casoUno(nodo *arbol){
   
 }
 void casoDos(nodo *arbol){
+    //Cuando el nodo a  eliminar tiene un hijo
     if(elim!=arbol){
     ubicarPadre(arbol);
     if(elimAux->izq==elim){
@@ -320,6 +325,7 @@ void casoDos(nodo *arbol){
 }
 }
 void nodoRemplazar(nodo *arbol){
+    //ubicar al que va a remplazar al nodo eliminar; 
     if(arbol==NULL){
         cout<<"El arbol esta vacio"<<endl;
     }else if(arbol->izq!=NULL){
@@ -335,24 +341,25 @@ void casoTres(nodo *arbol){
 
     if(elim!=arbol){
     ubicarPadre(arbol);
+
      if(elimAux->izq==elim){
         //elimAux es padre y elim es hijo
         nodoRemplazar(elim->der);
-
+        //los datos de elim(nodo a eliminar) los guardamos en las variables;
         dia1=elim->dia;
         mes1=elim->mes;
         ano1=elim->ano;
         cod1=elim->cod;
         strcpy(nombre1,elim->nombre);
         strcpy(apellido1,elim->apellido);
-
+        //los datos de remplazar los guardamos elim;
         elim->cod=remplazar->cod;
         strcpy(elim->apellido,remplazar->apellido);
         strcpy(elim->nombre,remplazar->nombre);
         elim->ano=remplazar->ano;
         elim->mes=remplazar->mes;
         elim->dia=remplazar->dia;
-
+        //los datos de las  variables se las pasamos a remplazar;
         remplazar->cod=cod1;
         strcpy(remplazar->apellido,apellido1);
         strcpy(remplazar->nombre,nombre1);
@@ -402,7 +409,6 @@ void casoTres(nodo *arbol){
             casoUno(arbol);
         }
     }  
-
     }
 }
 void eliminar(){
