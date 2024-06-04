@@ -383,7 +383,6 @@ struct nodo* BalancearArbol(struct nodo *arbol){
     arbol->izq = BalancearArbol(arbol->izq);
   }
 
-  arbol->altura = 1 + mayor(obtenerAltura(arbol->izq), obtenerAltura(arbol->der));  
 
   int balance = obtenerBalance(arbol);
 
